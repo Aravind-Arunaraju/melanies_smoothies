@@ -1,7 +1,8 @@
 name: app_environment
 channels:
   - snowflake
+  - conda-forge
 dependencies:
-  - python=3.9.*
-  - snowflake-snowpark-python=
-  - streamlit=
+  - python=3.9
+  - snowflake-snowpark-python=1.11.0
+  - streamlit=1.32.2

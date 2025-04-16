@@ -6,3 +6,5 @@ dependencies:
   - python=3.9
   - snowflake-snowpark-python=1.11.0
   - streamlit=1.32.2
+  - rich=13.7.1
+  - pygments

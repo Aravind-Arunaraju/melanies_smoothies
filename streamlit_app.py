@@ -14,7 +14,7 @@ cnx = st.connection("snowflake")
 session = cnx.session()
 
 # ✅ Run direct SQL query to ensure all columns (including SEARCH_ON) show up
-query = "SELECT * FROM smoothies.Public.fruit_options"
+query = "SELECT * FROM smoothies.Public.FRUIT_OPTIONS_TEST"
 fruit_sql_df = session.sql(query).to_pandas()
 
 # Display the data

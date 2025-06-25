@@ -20,7 +20,7 @@ st.write("Current Database:", session.get_current_database())
 st.write("Current Schema:", session.get_current_schema())
 
 # Get fresh fruit options (force evaluation)
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('SEARCH_ON')).to_pandas()
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_ID')).to_pandas()
 
 # Debug: Display current fruit options (will be empty if table was truncated)
 st.write("Available fruit options:")

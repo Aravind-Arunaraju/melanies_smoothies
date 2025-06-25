@@ -44,40 +44,7 @@ if ingredients_list:
 
 
 #New section to display smoothiefroot nutrition information
-# import requests
-# smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-# # st.text(smoothiefroot_response.json())
-# sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
-
-# import streamlit as st
 import requests
-# import pandas as pd
-
-# Get the response from the API
-response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-data = response.json()
-
-# Extract common metadata and nutrition details
-common_info = {
-    "family": data["family"],
-    "genus": data["genus"],
-    "id": data["id"],
-    "name": data["name"],
-    "order": data["order"]
-}
-
-# Convert nutrition dict to rows with shared metadata
-nutrition_data = []
-for nutrient, value in data["nutritions"].items():
-    row = {
-        "nutrition_type": nutrient,
-        **common_info,
-        "nutrition": value
-    }
-    nutrition_data.append(row)
-
-# Convert to DataFrame and set index to 'nutrition_type' for better view
-df = pd.DataFrame(nutrition_data).set_index("nutrition_type")
-
-# Display in Streamlit
-st.dataframe(df, use_container_width=True)
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+# st.text(smoothiefroot_response.json())
+sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
